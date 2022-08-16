@@ -1,1 +1,10 @@
-<%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+
+<div class="grid">
+    <% current_user.days.each do |day|  %>
+        <div class="item">
+            <div class="content">
+                <% if day.done %><% else %>  <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>
