@@ -14,6 +14,42 @@ body {
     animation: gradient 15s ease infinite;
     min-height: 100vh;
 }
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+input {
+    /* outline: 2px solid rgb(0, 0, 0); */
+    padding: .33em .6em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+button, input[type='submit'] {
+    background-color: #b3ffed;
+    padding: .5em .8em;
+    border-radius: 3px;
+    transition: ease-out 70ms all;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    outline: none;
+    border: none;
+    min-width: 6ch;
+    text-align: center;
+    margin: 0 auto;
+    display: block
+}
+button:hover,
+input[type='submit']:hover {
+    cursor: pointer;
+    background-color: #9effe8;
+}
+
+input[type='checkbox'] {
+    background-color: #ffffff;
+    padding: 8px;
+    border: 1p solid black;
+}
 
 @keyframes gradient {
     0% {
@@ -31,21 +67,44 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(7, 7vw);
-    grid-template-rows: 7vw;
+    grid-template-columns: repeat(7, 12vw);
+    grid-template-rows: 12vw;
     grid-gap: 1vw;
     padding: 3vw;
-    padding-left: 22.5vw;
-    padding-right: 22.5vw;
-    
 }
+
 .grid .item {
     background-color: rgba(255, 255, 255, 0.336);
-    min-height: 7vw;
+    min-height: 12vw;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 100ms ease-out all; 
 } 
+@media (min-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(7, 10vw);
+        grid-template-rows: 10vw;
+        grid-gap: 1vw;
+        padding: 3vw 12vw 3vw 12vw;
+        }
+    .grid .item {
+        min-height: 10vw;
+    }
+}
+@media (min-width: 1200px) {
+.grid {
+        grid-template-columns: repeat(7, 7vw);
+        grid-template-rows: 7vw;
+        grid-gap: 1vw;
+        padding: 3vw 22.5vw 3vw 22.5vw;
+    }
+
+    .grid .item {
+        min-height: 7vw;
+    }
+
+}
+
 .grid .item:hover {
     transition: 120ms ease all;
     transform-origin: bottom center;
