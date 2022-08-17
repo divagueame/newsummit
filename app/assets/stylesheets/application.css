@@ -22,9 +22,9 @@ a:hover {
 }
 input {
     /* outline: 2px solid rgb(0, 0, 0); */
-    padding: .33em .6em;
+    /* padding: .33em .6em;
     margin-bottom: 10px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black; */
 }
 button, input[type='submit'] {
     background-color: #b3ffed;
@@ -45,12 +45,18 @@ input[type='submit']:hover {
     background-color: #9effe8;
 }
 
-input[type='checkbox'] {
-    background-color: #ffffff;
-    padding: 8px;
-    border: 1p solid black;
+input[type='checkbox'] { 
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff; 
+    margin: 0;  
+    width: 100px;
+    height: 100px;
+    display: block;
 }
-
+input[type='checkbox']:checked{
+        background-color: rgb(255, 0, 0);
+}
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -79,6 +85,9 @@ input[type='checkbox'] {
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 100ms ease-out all; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } 
 @media (min-width: 500px) {
     .grid {
@@ -86,23 +95,21 @@ input[type='checkbox'] {
         grid-template-rows: 10vw;
         grid-gap: 1vw;
         padding: 3vw 12vw 3vw 12vw;
-        }
+    }
     .grid .item {
         min-height: 10vw;
     }
 }
 @media (min-width: 1200px) {
-.grid {
+    .grid {
         grid-template-columns: repeat(7, 7vw);
         grid-template-rows: 7vw;
         grid-gap: 1vw;
         padding: 3vw 22.5vw 3vw 22.5vw;
     }
-
     .grid .item {
         min-height: 7vw;
     }
-
 }
 
 .grid .item:hover {
