@@ -15,7 +15,7 @@
   <body>
     <nav>
       <% if current_user %>
-      <span><%= current_user.email %></span>
+      <h6><%= current_user.email %></h6>
       <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
       <% end %>
     </nav>
