@@ -1,0 +1,13 @@
+.devise {
+    padding: 0 10%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.devise form {
+    background-color: rgba(255, 255, 255, 0.184);
+    padding: 2rem;
+    border-radius: 15px;
+}

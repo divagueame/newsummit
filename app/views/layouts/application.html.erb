@@ -13,7 +13,11 @@
   </head>
 
   <body>
-  <nav><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %></nav>
+    <nav>
+      <% if current_user %>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn" %>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
