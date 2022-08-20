@@ -1,14 +1,100 @@
 .devise {
     padding: 0 10%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: stretch;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
 }
+.devise input:focus-visible {
+    outline: 2px solid rgb(0, 128, 255);
+}
 .devise form {
     background-color: rgba(255, 255, 255, 0.184);
-    padding: 2rem;
+    padding: 2rem 1.4rem;
     border-radius: 15px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    width: clamp(275px, 90%, 420px);
+}
+.devise .field {
+    margin-bottom: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.devise .field.text label {
+    position: absolute;
+    background-color: white;
+    color:rgba(0, 0, 0, 0.85);
+    border-radius: 29px;
+    padding: 0px 12px;
+    /* outline: 4px solid rgb(0, 0, 0); */
+    z-index: 1;
+    transition: 120ms ease all;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.devise input[type=email]:not(:placeholder-shown)~label,
+.devise input[type=password]:not(:placeholder-shown)~label {
+    top: -25%;
+    z-index: 3;
+    transform: translateY(0%);
+    font-size: 10px;
+}
+.devise input[type=email]:not(:placeholder-shown),
+.devise input[type=password]:not(:placeholder-shown) {
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 0px, rgba(0, 0, 0, 0.24) 0px 0px 0px;
+    z-index: 2;
+}
+
+.devise .field.text:focus-within label {
+    top:-25%;
+    transform: translateY(0%);
+    z-index: 3;
+    font-size: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+  
+
+.devise input[type=email]:not(:placeholder-shown),
+.devise input[type=password]:not(:placeholder-shown) {
+    /* outline: 1px solid orange; */
+}
+
+.devise input[type=email],
+.devise input[type=password] {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 8px 5px 8px 25px; 
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.devise input[type=checkbox] {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border: 5px white;
+    width: 30px;
+    height: 30px;
+    /* border:2px solid green; */
+    border-radius: 4px;
+    cursor: pointer;
+}
+.devise .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+.devise input[type=checkbox]:checked {
+    background-color: rgb(0, 255, 179);
+    border: 1px solid white;
 }
