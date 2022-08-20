@@ -1,8 +1,7 @@
 
 <div class="grid">
-    <% current_user.days.each do |day|  %>
-        <%= turbo_frame_tag dom_id(day) do %>
+    <% current_user.days.each do |day|  %> 
             <%= render partial: "partials/day", locals: {day: day} %>
-        <% end %>
+
     <% end %>
 </div>
