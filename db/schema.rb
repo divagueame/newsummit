@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_21_140239) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_21_190328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,13 +20,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_21_140239) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "time", default: 0, null: false
     t.index ["user_id"], name: "index_days_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
     t.integer "start", default: 0, null: false
     t.integer "end", default: 2000, null: false
-    t.datetime "date", default: "2023-08-21 14:09:32", null: false
+    t.datetime "date", default: "2023-08-21 19:45:42", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

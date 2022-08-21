@@ -1,6 +1,14 @@
-
+<% @daily_goals.each do |goal| %>
+    <%= format_seconds(goal) %>
+<% end %>
+<div class="goal-card">
+    <h2>Today's goal: </h2>
+    <p>% Completed: </p>
+    <p>Final Running Goal: <%= format_seconds(current_user.goal.end)%></p>
+    <p>Days Left: </p>
+</div>
 <div class="grid">
-    <% current_user.days.each do |day|  %> 
+    <% current_user.days.order(:created_at).each do |day|  %> 
             <%= render partial: "partials/day", locals: {day: day} %>
     <% end %>
 </div>
