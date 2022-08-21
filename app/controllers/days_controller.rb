@@ -1,14 +1,7 @@
 class DaysController < ApplicationController 
   before_action :set_day
   def update
-        respond_to do |format|
-      if @day.update(day_params)
-        format.html { redirect_to root_url, notice: "Day was successfully updated." }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-      end
-    end
-
+    @day.update(day_params)
   end
 
 private

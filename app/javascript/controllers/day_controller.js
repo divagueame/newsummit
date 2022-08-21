@@ -6,13 +6,6 @@ export default class extends Controller {
   }
 
   toggle() {
-    console.log('lets go')
-    if (this.element.checked) {
-      // this.element.closest('.todo').classList.add('todo-done');
-    } else {
-      // this.element.closest('.todo').classList.remove('todo-done');
-    }
-    
     let day_id = this.element.dataset.id;
     
     let url = `/days/${day_id}`
