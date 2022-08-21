@@ -3,16 +3,20 @@ module GoalCalculator
 
     days = (target_date - DateTime.now).to_i/1.day
     daily_increase = end_seconds / days
-
     days_arr = []
     days.times do |i|
       day_hash = {
         date: DateTime.current + i,
         user_id: user_id,
-        time: i * daily_increase
+        time: (1 + i) * daily_increase
       }
       days_arr.push(day_hash)
     end
     Day.create(days_arr)
   end
+  
+  def get_daily_goals
+    Day.where(user_id: current_user.id).select(:time).to_a
+  end
+
 end

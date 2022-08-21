@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_21_190328) do
   create_table "goals", force: :cascade do |t|
     t.integer "start", default: 0, null: false
     t.integer "end", default: 2000, null: false
-    t.datetime "date", default: "2023-08-21 19:45:42", null: false
+    t.datetime "date", default: "2023-08-21 20:03:33", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
