@@ -11,7 +11,6 @@ private
   end
  
   def day_params 
-    # params.fetch(:day, :done)
     params.require(:day).permit(:done)
   end
 
