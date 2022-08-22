@@ -1,8 +1,10 @@
 <div class="goal-card">
     <h2>Today's goal: <%= format_seconds(@today.time) %></h2>
-    <p>% Completed:  %</p>
-    <p>Final Running Goal: <%= format_seconds(current_user.goal.end)%></p>
-    <p>Days Left: </p>
+    <div class="tags">
+        <span>Completed:  <%= @user_completed %>%</span>
+        <span>Ultimate Goal: <%= format_seconds(current_user.goal.end)%></span>
+        <span>Days Left: <%= @days_left %></span>
+    </div>
 </div>
 <div class="grid">
     <% current_user.days.order(:created_at).each do |day|  %> 

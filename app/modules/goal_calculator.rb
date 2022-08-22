@@ -16,7 +16,7 @@ module GoalCalculator
   end
   
   def get_daily_goals
-    Day.where(user_id: current_user.id).select(:time).to_a
+    current_user.days.select(:time).to_a
   end
 
 end

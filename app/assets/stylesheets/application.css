@@ -177,3 +177,20 @@ font-family: 'Lato', sans-serif;
     transform: translateX(0);
 }
 
+.goal-card {
+    max-width: 45%;
+    background-color: #d3f3ff6f;
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+.goal-card h2{
+    margin: 0 auto;
+    width: fit-content;
+}
+.goal-card .tags{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+}
